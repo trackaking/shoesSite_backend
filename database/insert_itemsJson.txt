@@ -1,0 +1,128 @@
+-- creation de la table des items
+create table itemsJson (id int PRIMARY Key Identity(1,1) not null,
+name varchar(50) not null,
+image text not null,
+Brand varchar(50) not null,  --marque de l'item
+price int not null, 
+details text, 
+itemCategory text not null) 
+
+
+
+--insertion dans la table 
+insert into itemsJson values 
+('Nike Air Force 1 07 Essential',
+'https://static.nike.com/a/images/t_PDP_1728_v1/20488f52-3686-476c-b4b8-0ca430c34a05/air-force-1-07-essential-shoe-BHN3Db.jpg',
+'Nike',
+7495,
+'Let your shoe game shimmer in the Nike Air Force 1 07 Essential. It takes the classic AF-1 design to the next level with its premium leather upper and iridescent Swoosh.',
+'shoes')
+
+
+
+
+
+--new insertion (30)
+insert into itemsJson values 
+('Nike Air Force 1 07 Essential',
+'https://static.nike.com/a/images/t_PDP_1728_v1/67e9c661-4cbb-4ff3-963f-49c0a219ba22/air-force-1-07-shoe-jKJ8T4.jpg',
+'Nike',
+7495,
+'The legend lives on in the Nike Air Force 1 07, a modern take on the iconic AF1 that blends classic style with fresh colours and details.',
+'shoes')
+
+insert into itemsJson values 
+('Nike Air Force 1 Sage Low LX',
+'https://static.nike.com/a/images/t_PDP_1728_v1/9c4f5787-cfca-49e1-ad6b-d8058da06a4c/air-force-1-sage-low-lx-shoe-nTkdbB.jpg',
+'Nike',
+990,
+'Taking both height and craft to new levels, the Nike Air Force 1 Sage Low LX features a platform midsole and pared-down upper. Rolled edges and clean lines replace traditional overlays for a bold look.',
+'shoes')
+
+insert into itemsJson values 
+('Nike Air Max Dia SE',
+'https://static.nike.com/a/images/t_PDP_1728_v1/17c7e995-7b18-43ff-87cb-ce0e239f4fe5/air-max-dia-se-shoe-CH3Phk.jpg',
+'Nike',
+850,
+'Designed for a woman s foot, the Nike Air Max Dia delivers a lifted look and airy aesthetic in a sleek shape. The minimal upper modernises the look while the exaggerated midsole amplifies the Max Air unit surrounded by clear TPU for a boost of style.',
+'shoes')
+
+insert into itemsJson values 
+('Nike Air Max Verona',
+'https://static.nike.com/a/images/t_PDP_1728_v1/i1-5150aab0-88d1-4b92-ac2a-34d9d7710163/air-max-verona-shoe-BN7zWH.jpg',
+'Nike',
+750,
+'Pass on the good vibes in the Nike Air Max Verona. Elegant and versatile, its mixed-material upper features a plush collar, flashy colours and unique stitching patterns. The Nike Air cushioning adds a modern twist, comfort and style to your journey.',
+'shoes')
+
+
+insert into itemsJson values 
+('Nike Free Metcon 3',
+'https://static.nike.com/a/images/t_PDP_1728_v1/2dbb7f8c-e1ab-4684-a36e-cea5df876111/free-metcon-3-training-shoe-NMfJ2J.jpg',
+'Nike',
+760,
+'The Nike Free Metcon 3 combines the flexibility of a Nike Free sole with the flat, wide heel of the Metcon to keep you fast but stable on your feet from weightlifting to speed drills.',
+'shoes')
+
+insert into itemsJson values 
+('NikeCourt Blanc',
+'https://static.nike.com/a/images/t_PDP_1728_v1/308cb920-402a-45e6-9e91-ab1fd2b6bef2/nikecourt-blanc-shoe-lKw62P.jpg',
+'Nike',
+595,
+'Inspired by heritage models, the NikeCourt Blanc goes with anything and everything. Leather in the upper gives you a clean look with pops of colour for a simple, versatile style that nods to the past.',
+'shoes')
+
+insert into itemsJson values 
+('Nike Zoom Pegasus Turbo 2',
+'https://static.nike.com/a/images/t_PDP_1728_v1/i1-1744f98f-e160-4e46-a574-512f4a46bcd6/zoom-pegasus-turbo-2-running-shoe-sQMJVQ.jpg',
+'Nike',
+200,
+'The Nike Zoom Pegasus Turbo 2 is updated with a feather-light upper, while innovative foam brings revolutionary responsiveness to your long-distance training.',
+'shoes')
+
+insert into itemsJson values 
+('Nike Air Max 270 React ENG',
+'https://static.nike.com/a/images/t_PDP_1728_v1/0b4520d4-f02a-4ba4-bbb0-aabcd939f835/air-max-270-react-eng-shoe-S0gdwR.jpg',
+'Nike',
+170,
+'The Nike Air Max 270 React ENG combines a full-length React foam midsole with a 270 Max Air unit for unrivalled comfort and a striking visual experience.',
+'shoes')
+
+insert into itemsJson values 
+('Nike Air Max 90',
+'https://static.nike.com/a/images/t_PDP_1728_v1/4f7d477a-fafd-456a-ac08-bf970b90feab/air-max-90-shoe-r5WqV3.jpg',
+'Nike',
+200,
+'Clean lines, versatile and timelessâ€”the people"s shoe returns with the Nike Air Max 90. Featuring the same iconic Waffle sole, stitched overlays and classic TPU accents you "ve come to love, it lets you walk among the pantheon of Air.',
+'shoes') 
+
+insert into itemsJson values 
+('Nike Air Force 1 07',
+'https://static.nike.com/a/images/t_PDP_1728_v1/i1-512bfa8a-01a0-4971-bd34-9cef18a159e0/air-force-1-07-shoe-AKTdww3y.jpg',
+'Nike',
+200,
+'The radiance lives on in the Nike Air Force 1 07, the b-ball OG that puts a fresh spin on what you know best: crisp leather in an all-white colourway for a statement look on and off the court.',
+'shoes') 
+
+insert into itemsJson values 
+('Jordan Air Max 200 XX',
+'https://static.nike.com/a/images/t_PDP_1728_v1/a35dad5c-1bb1-402e-b6ae-ea929406858f/jordan-air-max-200-xx-shoe-v2glvX.jpg',
+'Nike',
+300,
+'With design inspiration taken from the iconic AJ8, the Jordan Air Max 200 XX features enhanced cushioning for all-day, street-ready comfort.',
+'shoes') 
+
+insert into itemsJson values 
+('Nike SuperRep Go',
+'https://static.nike.com/a/images/t_PDP_1728_v1/65acdb60-b5ff-403a-b5f4-b51d769741f6/superrep-go-training-shoe-WLsRRm.jpg',
+'Nike',
+200,
+'The Nike SuperRep Go combines comfortable foam cushioning, flexibility and support to get you moving in circuit-based fitness classes or while streaming workouts at home.',
+'shoes') 
+
+
+
+select * from itemsJson
+
+
+
