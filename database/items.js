@@ -8,7 +8,7 @@ function getAllItems() {
 }
 
 function getItemsById(id) {
-    return knex('items')
+    return knex('itemsJson')
         .where('id', id);
 }
 
