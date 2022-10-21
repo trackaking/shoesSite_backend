@@ -1,12 +1,13 @@
 const chaineConnexion = {
     client: 'mssql',
     connection: {
-        host: 'trackaking.database.windows.net',
+        host: 'localhost',
         user: 'trackaking',
-        password: 'Stephen001!',
-        database: 'weFresh',
+        password: 'stephen001',
+        database: 'Crypto',
         options: {
-            encrypt: true,
+            encrypt: false,
+            port: 1433,
         },
     },
 };

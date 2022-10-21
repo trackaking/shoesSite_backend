@@ -4,7 +4,7 @@ const chaineConnexion = require('../constantes');
 const knex = knexModule(chaineConnexion);
 
 function getAllItems() {
-    return knex('items');
+    return knex('itemsJson');
 }
 
 function getItemsById(id) {

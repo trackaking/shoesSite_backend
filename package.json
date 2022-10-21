@@ -1,28 +1,27 @@
 {
-  "name": "backen_crypto",
+  "name": "shoes_site",
   "version": "1.0.0",
-  "description": "API de l'application CRTP",
+  "description": "API de l'application MealMe",
   "main": "app.js",
   "keywords": [],
-  "author": "Stephane", 
+  "author": "Stephane",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.0",
     "cors": "^2.8.5",
-    "csv-parser": "^3.0.0",
     "dotenv": "^16.0.0",
-    "express": "^4.17.3",
+    "express": "^4.18.0",
+    "firebase": "^9.10.0",
     "jsonwebtoken": "^8.5.1",
     "knex": "^0.95.15",
-    "msnodesqlv8": "^2.4.7",
     "mssql": "^8.0.2",
     "multer": "^1.4.5-lts.1",
-    "mysql": "^2.18.1",
     "nodemon": "^2.0.15",
-    "path": "^0.12.7",
-    "sqlite3": "^5.0.8"
+    "swagger-ui-express": "^4.3.0"
   },
   "devDependencies": {
+    "@types/jsonwebtoken": "^8.5.9",
     "eslint": "^8.12.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.4",
@@ -34,6 +33,10 @@
     "lint": "npx eslint *.js",
     "fix": "eslint --fix --ext .js,.jsx .",
     "test": "jest",
-    "serve": "nodemon app.js "
+    "serve": "nodemon app.js ",
+    "start": "node app.js",
+    "heroku": "git push heroku main",
+    "restart": "heroku restart -a mealmeapi",
+    "log": "heroku logs -t"
   }
 }

@@ -9,7 +9,7 @@ const connexionRouter = require('./routes/connexion');
 const singUpRouter = require('./routes/signUp');
 const itemsRouter = require('./routes/items');
 const cartRouter = require('./routes/cart');
-const userRouter = require('./routes/user');
+const userRouter = require('./routes/users');
 
 app.use(cors());
 app.use(express.json());

@@ -8,50 +8,50 @@ const router = express.Router();
 
 const bcrypt = require('bcryptjs');
 
-router.get('/', async (req, res) => {
-    res.header('Access-Control-Allow-Origin', '*');
-
-    let resultat;
-    try {
-        resultat = await request.getAllUser();
-    } catch (error) {
-        res.status(500).json(error.message);
-    }
-
-    return res.status(200).json(resultat);
-});
 
 // route pour se connecter
 router.post('/', async (req, res) => {
     res.header('Access-Control-Allow-Origin', '*');
 
     let resultat;
+    let accessToken;
+    let success = true;
+    let message = '';
+    const date = new Date(); // date initialisation
+    let time = '';
+    let password;
+ 
+
     try {
-        const { username, password } = req.body;
+        const { username} = req.body;
+        password = req.body.password;
         resultat = await request.findUserByUsername(username);
-        if (resultat.lenght === 0) {
-            // res.status(400).send("this username doesn't exist ");
-            console.log("this username doesn't exist ");
-        }
-        const result = bcrypt.compareSync(password, resultat[0].password);
-        if (result === false) {
-            // res.status(400).send('The password is incorrect');
-            console.log('The password is incorrect ');
-        }
     } catch (error) {
-        res.status(500).json(error);
+        res.status(500).send(error.message);
         console.log(error);
     }
-    const expiresIn = 14400;
-    const accessToken = jwt.sign({ username: resultat[0].username }, process.env.TOKEN_KEY, {
-        expiresIn,
-    });
+    if (resultat.length != 0) {
+        const verifyPassword = bcrypt.compareSync(password, resultat[0].password)
+        if (verifyPassword === true) {
+            const expiresIn = '24h';
+            accessToken = jwt.sign({ username: resultat[0].username }, process.env.TOKEN_KEY, {
+                expiresIn,
+            });
+            time += `Token Generated at:- ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+        } else {
+            success = false
+            message += "le mot de passe est incorrect.Essayez de nouveau"
+        }
+    } else{
+        success = false
+        message += " le username est incorrect. Essayez de nouveau"
+    }
 
-    return res.status(200).json({
-        succes: true,
-        username: resultat[0].username,
+    return res.json({
+        success: success,
         access_token: accessToken,
-        expires_in: expiresIn,
+        time: time,
+        message : message
     });
 });
 
