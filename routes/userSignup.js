@@ -1,3 +1,5 @@
+"use strict"
+
 const express = require('express');
 
 const router = express.Router();
@@ -27,13 +29,13 @@ router.post('/', async (req, res) => {
     try {
         //verify if the username and the email are not already in the database
         const verifyUsername = await request.findUserByUsername(userInfo.username);
-        const verifyEmail = await request.findUserByEmail(userInfo.email)
+        const verifyEmail = await request.findUserByEmail(userInfo.email);
 
         if (verifyUsername.length != 0) {
             message += 'this username already exist please chose another one ';
             if (verifyEmail.length != 0) {
                 message += '\nthis email already exist please chose another one';
-                console.log(message)
+                console.log(message);
             }
 
         } else {

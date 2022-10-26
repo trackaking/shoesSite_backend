@@ -31,20 +31,20 @@ router.post('/', async (req, res) => {
         console.log(error);
     }
     if (resultat.length != 0) {
-        const verifyPassword = bcrypt.compareSync(password, resultat[0].password)
+        const verifyPassword = bcrypt.compareSync(password, resultat[0].password);
         if (verifyPassword === true) {
             const expiresIn = '24h';
             accessToken = jwt.sign({ username: resultat[0].username }, process.env.TOKEN_KEY, {
                 expiresIn,
             });
-            time += `Token Generated at:- ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+            time += `Token Generated at:- ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
         } else {
-            success = false
-            message += "le mot de passe est incorrect.Essayez de nouveau"
+            success = false;
+            message += "le mot de passe est incorrect.Essayez de nouveau";
         }
     } else{
-        success = false
-        message += " le username est incorrect. Essayez de nouveau"
+        success = false;
+        message += " le username est incorrect. Essayez de nouveau";
     }
 
     return res.json({

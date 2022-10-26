@@ -32,7 +32,7 @@
   },
   "scripts": {
     "lint": "npx eslint *.js",
-    "fix": "eslint --fix --ext .js,.jsx .",
+    "fix": "npx eslint --fix --ext .js,.jsx .",
     "test": "jest",
     "serve": "nodemon app.js ",
     "start": "node app.js",

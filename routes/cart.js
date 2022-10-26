@@ -1,6 +1,6 @@
 const express = require('express');
 
-const fs = require('fs');
+//const fs = require('fs');
 
 const request = require('../database/cart');
 

@@ -35,10 +35,10 @@ const chaineConnexion = {
 const chaineConnexion ={
     client: 'sqlite3',
     connection: {
-      filename: "shoesSite.sqlite3"      
+        filename: "shoesSite.sqlite3"      
     } ,
     useNullAsDefault: true
-  };
+};
 
 
 

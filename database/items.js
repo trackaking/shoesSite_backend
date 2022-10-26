@@ -4,17 +4,26 @@ const chaineConnexion = require('../constantes');
 const knex = knexModule(chaineConnexion);
 
 function getAllItems() {
-    return knex('itemsJson');
+    return knex('items');
 }
 
-function getItemsById(id) {
-    return knex('itemsJson')
-        .where('id', id);
+function getItemsById(itemId) {
+    return knex('items')
+        .where('id', itemId);
 }
 
 function addItem(item) {
     return knex('items')
-        .insert(item);
+        .insert({
+            itemName : item.itemName,
+            itemPrice : item.itemPrice,
+            quantity : item.quantity,
+            itemDescription : item.itemDescription,
+            reviewCount : item.reviewCount,
+            reviewScore : item.reviewScore,
+            Type : item.Type,
+            brand : item.brand
+        });
 }
 
 module.exports = {
