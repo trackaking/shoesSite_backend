@@ -5,6 +5,8 @@ const request = require('../database/user');
 const router = express.Router();
 
 
+
+
 // get all user in the database for test purpose
 router.get('/', async (req, res) => {
     res.header('Access-Control-Allow-Origin', '*');

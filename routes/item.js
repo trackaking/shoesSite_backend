@@ -4,6 +4,8 @@ const request = require('../database/items');
 
 const router = express.Router();
 
+const uuidv4 = require("uuid")
+
 
 // route pour afficher un item par son id
 router.get('/:id', async (req, res) => {
@@ -39,7 +41,7 @@ router.post('/', async(req,res)=> {
     } = req.body
 
     try{
-        resultat = await request.addItem(item)
+        resultat = await request.addItem(item, uuidv4.v4())
         console.log(resultat)
         if (resultat.lenght != 0){
             succes = true

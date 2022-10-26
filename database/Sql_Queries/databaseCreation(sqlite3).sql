@@ -12,14 +12,15 @@ password text not null
 
 
 create table if not exists items(
-itemId INTEGER not null Primary Key AUTOINCREMENT,
+itemId text not null Primary Key,
 itemName varchar(50) not null, 
 itemPrice FLOAT not null,
 quantity int not null, 
 itemDescription text, 
 reviewCount float, 
 reviewScore float,
-Type varchar(50) 
+Type varchar(50),
+brand varchar(50) 
 ) 
 
 

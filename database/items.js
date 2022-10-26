@@ -12,7 +12,7 @@ function getItemsById(itemId) {
         .where('id', itemId);
 }
 
-function addItem(item) {
+function addItem(item , itemId) {
     return knex('items')
         .insert({
             itemName : item.itemName,
@@ -22,7 +22,8 @@ function addItem(item) {
             reviewCount : item.reviewCount,
             reviewScore : item.reviewScore,
             Type : item.Type,
-            brand : item.brand
+            brand : item.brand,
+            itemId : itemId
         });
 }
 
