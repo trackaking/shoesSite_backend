@@ -18,6 +18,7 @@
     "mssql": "^8.0.2",
     "multer": "^1.4.5-lts.1",
     "nodemon": "^2.0.15",
+    "sqlite3": "^5.1.2",
     "swagger-ui-express": "^4.3.0"
   },
   "devDependencies": {
@@ -36,7 +37,7 @@
     "serve": "nodemon app.js ",
     "start": "node app.js",
     "heroku": "git push heroku main",
-    "restart": "heroku restart -a mealmeapi",
+    "restart": "heroku restart -a trackaking",
     "log": "heroku logs -t"
   }
 }

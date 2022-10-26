@@ -1,10 +1,11 @@
 const knexModule = require('knex');
 const chaineConnexion = require('../constantes');
+const { use } = require('../routes/users');
 
 const knex = knexModule(chaineConnexion);
 
 function getAllUser() {
-    return knex('users');
+    return knex('Users');
 }
 
 // Requete knex qui retourne les informations de connexion
@@ -14,27 +15,28 @@ function connexion(username, password) {
         .andWhere('password', password);
 }
 
-function signUp(username, firstName, lastName, email, password, number) {
+function signUp(user) {
     return knex('users')
         .insert({
-            username,
-            firstName,
-            lastName,
-            email,
-            password,
-            number,
+            username : user.username,
+            firstName : user.firstName,
+            lastName : user.lastName,
+            email : user.email,
+            password : user.password,
         });
 }
 
-/*
-function signUp(user){
-   return  knex.raw('insert into users (username,firstname,lastname,email,password,number) values(?,?,?,?,?,?)',user)
-}
-*/
 
 function findUserByUsername(username) {
     return knex('users')
-        .where('username', username);
+        .where('username', username)
+        .select('username')
+}
+
+function findUserByEmail (email){
+    return knex('Users')
+    .where('email',email)
+    .select('email')
 }
 
 module.exports = {
@@ -42,4 +44,5 @@ module.exports = {
     connexion,
     signUp,
     findUserByUsername,
+    findUserByEmail
 };

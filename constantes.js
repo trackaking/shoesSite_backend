@@ -12,7 +12,7 @@
     },
 };
 
-*/
+
 const chaineConnexion = {
     client: 'mssql',
     connection: {
@@ -27,6 +27,18 @@ const chaineConnexion = {
     pool: { min: 0, max: 7 },
     useNullAsDefault: true,
 };
+
+
+*/
+
+
+const chaineConnexion ={
+    client: 'sqlite3',
+    connection: {
+      filename: "shoesSite.sqlite3"      
+    } ,
+    useNullAsDefault: true
+  };
 
 
 
