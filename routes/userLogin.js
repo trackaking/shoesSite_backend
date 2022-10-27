@@ -34,7 +34,7 @@ router.post('/', async (req, res) => {
         const verifyPassword = bcrypt.compareSync(password, resultat[0].password);
         if (verifyPassword === true) {
             const expiresIn = '24h';
-            accessToken = jwt.sign({ username: resultat[0].username }, process.env.TOKEN_KEY, {
+            accessToken = jwt.sign({ userId: resultat[0].userId }, process.env.TOKEN_KEY, {
                 expiresIn,
             });
             time += `Token Generated at:- ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;

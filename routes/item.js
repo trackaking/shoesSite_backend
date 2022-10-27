@@ -1,3 +1,6 @@
+"use strict"
+
+
 const express = require('express');
 
 const request = require('../database/items');
@@ -5,6 +8,7 @@ const request = require('../database/items');
 const router = express.Router();
 
 const uuidv4 = require("uuid")
+
 
 
 // route pour afficher un item par son id
@@ -29,16 +33,28 @@ router.post('/', async(req,res)=> {
     let resultat;
     let message = '';
 
+const{
+    itemName,
+    itemPrice,
+    quantity,
+    itemDescription,
+    reviewCount,
+    reviewScore,
+    Type,
+    brand
+} = req.body
+
     let item = {
-        itemName,
-        itemPrice,
-        quantity,
-        itemDescription,
-        reviewCount,
-        reviewScore,
-        Type,
-        brand
+        itemName : itemName,
+        itemPrice : itemPrice,
+        quantity : quantity,
+        itemDescription : itemDescription,
+        reviewCount : reviewCount,
+        reviewScore : reviewScore,
+        Type : Type,
+        brand : brand
     } = req.body
+    
 
     try{
         resultat = await request.addItem(item, uuidv4.v4())

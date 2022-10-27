@@ -4,7 +4,7 @@ create table IF NOT EXISTS Users (
 userId INTEGER Primary key AUTOINCREMENT not null ,
 firstName Varchar(50) not null, 
 lastName varchar(50) not null, 
-userame varchar(20) not null, --le username doit se situer entre 0 -20 caract�res 
+username varchar(20) not null, --le username doit se situer entre 0 -20 caract�res 
 email varchar(50) not null, 
 password text not null
 )

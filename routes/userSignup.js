@@ -5,6 +5,14 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 const request = require('../database/user');
+const uuidv4 = require("uuid");
+
+// functions 
+function VerifyUserSignup(userinfo){
+
+}
+
+// ----------------------------------------------------------------------------------------
 
 
 
@@ -15,18 +23,27 @@ router.post('/', async (req, res) => {
     let succes = false;
     let message = '';
 
-    let userInfo = {
-        username,
-        firstName,
-        lastName,
-        email,
-        password
-    } = req.body;
 
-    //encrypt the password
-    userInfo.password = bcrypt.hashSync(userInfo.password);
+const {
+    username,
+    firstName,
+    lastName,
+    email,
+    password
+} = req.body
+
+let userInfo = {
+    username : username,
+    firstName : firstName,
+    lastName : lastName,
+    email : email,
+    password : password
+} 
+
 
     try {
+        //encrypt the password
+        userInfo.password = bcrypt.hashSync(userInfo.password);
         //verify if the username and the email are not already in the database
         const verifyUsername = await request.findUserByUsername(userInfo.username);
         const verifyEmail = await request.findUserByEmail(userInfo.email);
@@ -35,11 +52,10 @@ router.post('/', async (req, res) => {
             message += 'this username already exist please chose another one ';
             if (verifyEmail.length != 0) {
                 message += '\nthis email already exist please chose another one';
-                console.log(message);
             }
 
         } else {
-            resultat = await request.signUp(userInfo);
+            resultat = await request.signUp(userInfo, uuidv4.v4());
             succes = true;
         }
 

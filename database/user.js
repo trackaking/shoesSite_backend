@@ -9,7 +9,7 @@ function getAllUser() {
 }
 
 
-function signUp(user) {
+function signUp(user , userId) {
     return knex('users')
         .insert({
             username : user.username,
@@ -17,6 +17,7 @@ function signUp(user) {
             lastName : user.lastName,
             email : user.email,
             password : user.password,
+            userId : userId
         });
 }
 

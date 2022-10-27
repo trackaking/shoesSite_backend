@@ -12,7 +12,6 @@ const verifyToken = (req, res, next) => {
   }
   try {
     const decoded = jwt.verify(token, process.env.TOKEN_KEY);
-    // un objet qui contient { username: "leusernamedelapersonnepresente"}
     req.user = decoded;
   } catch (err) {
     return res.status(401).send("Jeton Invalid");
